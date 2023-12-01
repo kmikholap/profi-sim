@@ -1,0 +1,35 @@
+---
+protocols:
+  pn_rt:
+    pn_rt_ether: 34962
+    pn_rt_cos: 6
+    pn_rt_timer: 0
+  pn_alarm:
+    pn_alarm_ether: 34962
+    pn_alarm_cos: 6
+    pn_alarm_timer: 10
+  pn_dcp:
+    pn_dcp_bcast: ff:ff:ff:ff:ff:ff
+  pn_cc:
+    pn_cc_port: 34964
+    pn_cc_dscp: 46
+    pn_cc_timer: 0
+devices:
+  - mac: 00:50:56:bc:43:84
+    iface: ens160
+    ip: 192.168.31.111
+    role: controller
+    name: CTRL-01
+    this: true
+  - mac: 00:50:56:bc:2c:bc
+    iface: ens160
+    ip: 192.168.31.112
+    role: device
+    name: IOT-01
+    this: false
+  - mac: 00:50:56:bc:56:d6
+    iface: ens160
+    ip: 192.168.31.113
+    role: device
+    name: IOT-02
+    this: false
