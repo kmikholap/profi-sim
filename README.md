@@ -52,5 +52,5 @@ For example, if you are running this script on the device that will be acting as
 - if you are root:<br>
 python main.py
 
-- if not root AND running in virtual enviroment use sudo and specify path to the virtual enviroment python:<br>
+- if not root AND running in virtual enviroment, use sudo and specify path to the virtual enviroment python:<br>
 sudo -E ~/Python/env/profinet/bin/python3 profi-sim.py
