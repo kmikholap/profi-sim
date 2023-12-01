@@ -2,7 +2,7 @@
 
 Profinet is an industrial Ethernet standard for automation, providing a platform for data exchange between industrial controllers and devices. It supports real-time data transfer, is highly scalable, and allows for seamless integration with other networks and systems in industrial environments.
 
-This simulates some the following profinet communication channels listed belowat the flow level without actual meaningful packet payload. 
+This script simulates some the following profinet communication channels listed below at the network flow level without actual meaningful packet payload. 
 
 1. Real-time (RT) communication:
 Simulation: Flows between the IO-Controller VM and each IO-Device(s) VM(s). The IO-Controller sends a packet containing the mock "RT_L2_Ctrl_to_Devices" payload, which the IO-Devices detect and respond to the IO-Controller with "RT_L2_Ack_Device_to_Ctrl" packet.
