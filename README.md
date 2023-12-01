@@ -19,7 +19,7 @@ Simulation: The IO-Device VM sends a packet with the mock "Alarm_Device_to_Ctrl"
 ### Installation instructions ###
 
 1. Clone the Repository:
-git clone https://github.com/username/repository.git
+git clone https://github.com/kmikholap/profi-sim
 
 2. Setup Virtual Enviroment (Optional):<br>
 python -m venv profivenv<br>
