@@ -28,8 +28,8 @@ Real Production Environment: Alarm messages flow between PROFINET IO-Devices and
 git clone https://github.com/username/repository.git
 
 2. Setup Virtual Enviroment (Optional):
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+create: python -m venv profivenv
+activate: source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 
 3. Install requirements:
 pip install -r requirements.txt
