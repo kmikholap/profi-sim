@@ -27,14 +27,14 @@ Real Production Environment: Alarm messages flow between PROFINET IO-Devices and
 1. Clone the Repository:
 git clone https://github.com/username/repository.git
 
-2. Setup Virtual Enviroment (Optional):
-create: python -m venv profivenv
-activate: source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+2. Setup Virtual Enviroment (Optional):<br>
+python -m venv profivenv<br>
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 
 3. Install requirements:
 pip install -r requirements.txt
 
-4. Data:
+4. Data:<br>
 Ensure "devices.yaml" file is in the same directory as main python script "profinet-sim.py". Modify devices.yaml as desired (see usage example)
 
 
@@ -42,21 +42,21 @@ Ensure "devices.yaml" file is in the same directory as main python script "profi
 
 ### Usage example ###
 
-1. Deploy VM 
+1. Deploy VM. 
 
-2. Follow installation instructions above
+2. Follow installation instructions above.
 
 3. Ensure "devices.yaml" file is in the same directory as main python script "profinet-sim.py". Modify devices.yaml as desired:
 
 - Adjust protocol section values if needed.
 - In the "devices" section specify Controller and IO devices. Included test YAML file implies simulation with (1) Controller and (2) IO-Devices. 
 - In the "devices" section, for each device (Controller and IO) specify correct configuration parameters for the Mac and IP addresses, interface used for sending packets, device role and name.
-- In the "devices" section, adjast value of "this:" to correspond to the device, this script is being run on. 
+- In the "devices" section, adjust value of "this:" to correspond to the device this script is being run on.<br>
 For example, if you are running this script on the device that will be acting as Controller, then "this:" needs to be set to "true" under controller configuration while for all other devices need to have "this:" value set to false. Likewise, if you are running this script on the device that will be acting as an IO VM, then "this:" needs to be set to "true" under this IO device configuration while for all other devices (Controllers and IOs) need to have "this:" value set to false
 
 4. Run:
-- if you are root:
+- if you are root:<br>
 python main.py
 
-- Not root
+- Not root:<br>
 sudo -E ~/Python/env/profinet/bin/python3 profi-sim.py
