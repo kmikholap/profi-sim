@@ -5,22 +5,16 @@ Profinet is an industrial Ethernet standard for automation, providing a platform
 This script simulates some the following profinet communication channels listed below at the network flow level without actual meaningful packet payload. 
 
 1. Real-time (RT) communication:
-Simulation: Flows between the IO-Controller VM and each IO-Device(s) VM(s). The IO-Controller sends a packet containing the mock "RT_L2_Ctrl_to_Devices" payload, which the IO-Devices detect and respond to the IO-Controller with "RT_L2_Ack_Device_to_Ctrl" packet.
-
-Real Production Environment: RT communication happens between PROFINET Controllers like PLCs and IO-Devices. It is cyclic and ensures data exchange in real-time intervals. This communication bypasses the IP and UDP layers, operating directly on Ethernet for low latency.
+Simulation: Flows between the IO-Controller VM and each IO-Device(s) VM(s). The IO-Controller sends a packet containing the mock "RT_L2_Ctrl_to_Devices" payload, which the IO-Devices detect and respond to the IO-Controller with "RT_L2_Ack_Device_to_Ctrl" packet. In a real production environment, RT communication happens between PROFINET Controllers like PLCs and IO-Devices. It is cyclic and ensures data exchange in real-time intervals. This communication bypasses the IP and UDP layers, operating directly on Ethernet for low latency.
 
 2. PROFINET Communication Channel (PN-CC):
-Simulation: Flows between the IO-Controller VM and an IO-Device(s) VM(s). The IO-Controller sends a packet with the mock "PNCC_UDP_Ctrl_to_Devices" payload to the IO-Device, which the IO-Devices detect and respond to the IO-Controller with "PNCC_UDP_Device_to_Ctrl" packet.
-Real Production Environment: PN-CC is used for acyclic data exchanges, like parameterization or diagnostics. It typically flows between a PROFINET Controller and IO-Device, often over UDP.
+Simulation: Flows between the IO-Controller VM and an IO-Device(s) VM(s). The IO-Controller sends a packet with the mock "PNCC_UDP_Ctrl_to_Devices" payload to the IO-Device, which the IO-Devices detect and respond to the IO-Controller with "PNCC_UDP_Device_to_Ctrl" packet. In a real production environment, PN-CC is used for acyclic data exchanges, like parameterization or diagnostics. It typically flows between a PROFINET Controller and IO-Device, often over UDP.
 
 3. PROFINET Discovery and Basic Configuration Protocol (PN-DCP):
-Simulation: The IO-Controller VM broadcasts a packet with the mock "DCP_Bcast_Discovery_Ctrl_to_Devices" payload. IO-Devices respond to this broadcast with a unicast to controller "DCP_Bcast_Discovery_Ack_Device_to_Ctrl" packet.
-Real Production Environment: PN-DCP is used for basic device configuration, IP setting, and network discovery. It flows between PROFINET devices and controllers or engineering stations. The communication is typically a multicast or broadcast on the Ethernet layer.
+Simulation: The IO-Controller VM broadcasts a packet with the mock "DCP_Bcast_Discovery_Ctrl_to_Devices" payload. IO-Devices respond to this broadcast with a unicast to controller "DCP_Bcast_Discovery_Ack_Device_to_Ctrl" packet. In a real production environment,PN-DCP is used for basic device configuration, IP setting, and network discovery. It flows between PROFINET devices and controllers or engineering stations. The communication is typically a multicast or broadcast on the Ethernet layer.
 
 4. Alarm Handling:
-Simulation: The IO-Device VM sends a packet with the mock "Alarm_Device_to_Ctrl" payload to an IO-Controller VM, simulating that an alarm condition is being signaled. 
-
-Real Production Environment: Alarm messages flow between PROFINET IO-Devices and Controllers. If a device encounters an error or a specific event, it sends an alarm to the controller. These alarms are typically handled over UDP.
+Simulation: The IO-Device VM sends a packet with the mock "Alarm_Device_to_Ctrl" payload to an IO-Controller VM, simulating that an alarm condition is being signaled. In a real production environment, Alarm messages flow between PROFINET IO-Devices and Controllers. If a device encounters an error or a specific event, it sends an alarm to the controller. These alarms are typically handled over UDP.
 
 ### Installation instructions ###
 
@@ -31,7 +25,7 @@ git clone https://github.com/username/repository.git
 python -m venv profivenv<br>
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 
-3. Install requirements:
+3. Install requirements:<br>
 pip install -r requirements.txt
 
 4. Data:<br>
